@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 
-import { tap } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
+import { switchMap } from 'rxjs';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { UsersService } from 'src/app/services/users.service';
 
 export function passwordsMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
@@ -40,6 +41,7 @@ export class SignUpComponent implements OnInit {
     private router: Router,
     private authService: AuthenticationService,
     private toast: HotToastService,
+    private usersService: UsersService
   ) {}
 
   ngOnInit(): void {}
@@ -60,8 +62,9 @@ export class SignUpComponent implements OnInit {
   submit() {
     if (!this.signupForm.valid) return;
     const { name, email, password } = this.signupForm.value;
-    this.authService.signup(name, email, password)
+    this.authService.signup(email, password)
       .pipe(
+        switchMap(({ user: { uid }}) => this.usersService.addUser({ uid, email, displayName: name})),
         this.toast.observe({
           loading: 'Uploading profile image...',
           success: 'Image uploaded successfully',

@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard'
 import { ProfileComponent } from './components/profile/profile.component';
 
@@ -23,7 +23,7 @@ const redirectToHome = () => redirectLoggedInTo(['home'])
      ...canActivate(redirectToHome),
    },
    {
-     path: 'sign-up',
+     path: 'signup',
      component: SignUpComponent,
      ...canActivate(redirectToHome),
    },

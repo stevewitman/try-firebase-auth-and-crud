@@ -1,8 +1,8 @@
 <mat-toolbar color="primary">
   Sign up with Firebase
-  <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+  <ng-container *ngIf="user$ | async as user; else loginButton">
     <button mat-button [matMenuTriggerFor]="userMenu">
-    <img [src]="user.photoURL" class="profile-image-tool">
+    <img [src]="user.photoURL ?? 'assets/images/image-placeholder.png'" class="profile-image-tool">
       {{ user.displayName }}
       <mat-icon>expand_more</mat-icon>
     </button>

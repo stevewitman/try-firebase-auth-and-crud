@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { catchError, of } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
 
 import { AuthenticationService } from 'src/app/services/authentication.service';
