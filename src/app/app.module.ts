@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,6 +39,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    MatAutocompleteModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  height: calc(100vh - 70px);
+}
+.chat-list {
+  width: 40%;
+  margin: 1rem;
+  background: #c5cae9;
+  border-radius: 1rem;
+}
+.messages {
+  width: 60%;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+.search-input {
+  margin: 1.5rem;
+}
