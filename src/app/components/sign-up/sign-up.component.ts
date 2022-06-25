@@ -5,8 +5,8 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 import { HotToastService } from '@ngneat/hot-toast';
 import { switchMap } from 'rxjs';
 
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { UsersService } from 'src/app/services/users.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { UsersService } from '../../services/users.service';
 
 export function passwordsMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {

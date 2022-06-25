@@ -5,10 +5,10 @@ import { concatMap } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { ImageUploadService } from 'src/app/services/image-upload.service';
-import { UsersService } from 'src/app/services/users.service';
-import { UserProfileData } from 'src/app/models/user-profile-data';
+import { AuthenticationService } from '../../services/authentication.service';
+import { ImageUploadService } from '../../services/image-upload.service';
+import { UsersService } from '../../services/users.service';
+import { UserProfileData } from '../../models/user-profile-data';
 
 @UntilDestroy()
 @Component({
