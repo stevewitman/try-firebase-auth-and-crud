@@ -17,6 +17,7 @@ import { UsersService } from '../../services/users.service';
 export class HomeComponent implements OnInit {
   searchControl = new FormControl('');
   user$ = this.authService.currentUser$;
+  myChats$ = this.chatsService.myChats$;
   users$ = combineLatest([
     this.usersService.allUsers$,
     this.user$,
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit {
       )
     )
   );
+
   constructor(
     private authService: AuthenticationService,
     private usersService: UsersService,
@@ -39,6 +41,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   createChat(otherUser: UserProfileData) {
-    this.chatsService.createChat(otherUser).subscribe()
+    this.chatsService.createChat(otherUser).subscribe();
   }
 }

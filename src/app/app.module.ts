@@ -6,9 +6,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -40,8 +42,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     RouterModule,
     MatAutocompleteModule,
+    MatDividerModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
